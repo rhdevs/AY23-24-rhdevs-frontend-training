@@ -1,0 +1,13 @@
+main {
+  padding-top: 3rem; /*top nav bar*/
+  height: 100%;
+  min-height: 100vh;
+  margin-bottom: -10rem; /*footer*/
+  background-color: #fdfdfd;
+}
+
+main:after {
+  content: '';
+  display: block;
+  height: 10rem;
+}
