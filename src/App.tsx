@@ -9,11 +9,17 @@ import './App.css'
 import 'antd/dist/antd.css'
 
 export enum PATHS {
-  GROUP_ROUTE = '/group',
+  MISSIONS = '/missions',
 }
+
 const LandingPage = React.lazy(() => import(/* webpackChunckName: "LandingPage" */ './pages/LandingPage'))
 const NotFound = React.lazy(() => import(/* webpackChunckName: "NotFound" */ './pages/ErrorPage/NotFound'))
-const Groups = React.lazy(() => import(/* webpackChunckName: "Groups" */ './pages/Groups'))
+const Mission1HomePage = React.lazy(
+  () => import(/* webpackChunckName: "Mission1HomePage" */ './pages/Mission1HomePage'),
+)
+const Mission1ContentPage = React.lazy(
+  () => import(/* webpackChunckName: "Mission1ContentPage" */ './pages/Mission1ContentPage'),
+)
 
 function App() {
   useEffect(() => {
@@ -23,7 +29,8 @@ function App() {
   const routes = (
     <Switch>
       <Route path="/" exact component={LandingPage} />
-      <Route path={`${PATHS.GROUP_ROUTE}/:groupNumber`} exact component={Groups} />
+      <Route path={`${PATHS.MISSIONS}/1`} exact component={Mission1HomePage} />
+      <Route path={`${PATHS.MISSIONS}/1/:name&link=:submissionLink`} exact component={Mission1ContentPage} />
       <Route component={NotFound} />
       <Redirect to="/" />
     </Switch>

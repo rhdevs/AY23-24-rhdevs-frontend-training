@@ -1,16 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useParams } from 'react-router-dom'
 
-import MissionCard from '../../components/MissionCard'
-
-import frontendBannerGif from '../../assets/Frontend-Banner.gif'
+import NotFound from '../ErrorPage/NotFound'
+import Mission1NameCard from '../../components/Mission1NameCard'
 
 // Do not edit the other parts of the code!
-const FrontendBanner = styled.img`
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-`
 
 const MembersSection = styled.div`
   margin: 1.5rem 1rem;
@@ -30,18 +25,19 @@ const InformationCardSection = styled.div`
   padding: 10px 0;
 `
 
-const LandingPage = () => {
+const Mission1Page = () => {
   return (
     <>
-      <FrontendBanner src={frontendBannerGif} alt="frontend web development" />
       <MembersSection>
-        <MissionsHeader>Missions</MissionsHeader>
+        <MissionsHeader>Mission 1 - TypeScript Exercise</MissionsHeader>
+        <p></p>
         <InformationCardSection>
-          <MissionCard groupNumber={1} componentName="TypeScript Exercise" />
+          <Mission1NameCard name="your name here" submissionLink="google.com" />
+          {/* Add your Name Card here! */}
         </InformationCardSection>
       </MembersSection>
     </>
   )
 }
 
-export default LandingPage
+export default Mission1Page

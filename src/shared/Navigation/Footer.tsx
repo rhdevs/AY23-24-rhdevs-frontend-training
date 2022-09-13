@@ -78,7 +78,7 @@ const Footer = () => {
         <LogoContainer>
           <FEWebTitle imgSize="1.5rem" fontSize="17px" />
         </LogoContainer>
-        <StyledNavLink to={{ pathname: 'https://t.me/fanghuihui' }} target="_blank">
+        <StyledNavLink to={{ pathname: 'https://t.me/marcus_ong_qy' }} target="_blank">
           Help desk
         </StyledNavLink>
         <StyledNavLink to={{ pathname: 'https://rhdevs.github.io/landing-page/' }} target="_blank">

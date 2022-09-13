@@ -30,43 +30,20 @@ const StyledComponentName = styled.text`
   font-size: calc(16px + 0.5vw);
 `
 
-const StyledMemberNameGroup = styled.div`
-  display: flex;
-  flex-direction: row;
-`
-
-const BoldText = styled.text`
-  font-weight: 500;
-`
-
-const StyledNamesText = styled.text`
-  padding-left: 5px;
-`
-
 type Props = {
   groupNumber: number
   componentName: string
-  devs: string
-  designers: string
 }
 
-const GroupCard = (props: Props) => {
+const MissionCard = (props: Props) => {
   const history = useHistory()
 
   return (
-    <StyledCard onClick={() => history.push(`${PATHS.GROUP_ROUTE}/${props.groupNumber}`)}>
-      <StyledGroupNumber>Group {props.groupNumber}</StyledGroupNumber>
+    <StyledCard onClick={() => history.push(`${PATHS.MISSIONS}/${props.groupNumber}`)}>
+      <StyledGroupNumber>Mission {props.groupNumber}</StyledGroupNumber>
       <StyledComponentName>{props.componentName}</StyledComponentName>
-      <StyledMemberNameGroup>
-        <BoldText>Devs:</BoldText>
-        <StyledNamesText>{props.devs}</StyledNamesText>
-      </StyledMemberNameGroup>
-      <StyledMemberNameGroup>
-        <BoldText>Designers:</BoldText>
-        <StyledNamesText>{props.designers}</StyledNamesText>
-      </StyledMemberNameGroup>
     </StyledCard>
   )
 }
 
-export default GroupCard
+export default MissionCard

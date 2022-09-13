@@ -43,20 +43,20 @@ const StyledMenu = styled(Menu as any)`
 const MainNavigation = () => {
   const [isOpen, setOpen] = useState(false)
 
-  const menu = (
-    <StyledMenu>
-      <Menu.Item key={1} onClick={() => setOpen(false)}>
-        <a target="_blank" rel="noopener noreferrer" href="https://bit.ly/3kyO87g">
-          Schedule
-        </a>
-      </Menu.Item>
-      <Menu.Item key={2} onClick={() => setOpen(false)}>
-        <a target="_blank" rel="noopener noreferrer" href="https://tinyurl.com/frontend-learning">
-          Resources
-        </a>
-      </Menu.Item>
-    </StyledMenu>
-  )
+  // const menu = (
+  //   <StyledMenu>
+  //     <Menu.Item key={1} onClick={() => setOpen(false)}>
+  //       <a target="_blank" rel="noopener noreferrer" href="https://bit.ly/3kyO87g">
+  //         Schedule
+  //       </a>
+  //     </Menu.Item>
+  //     <Menu.Item key={2} onClick={() => setOpen(false)}>
+  //       <a target="_blank" rel="noopener noreferrer" href="https://tinyurl.com/frontend-learning">
+  //         Resources
+  //       </a>
+  //     </Menu.Item>
+  //   </StyledMenu>
+  // )
   return (
     <>
       <MainHeader>
@@ -64,7 +64,7 @@ const MainNavigation = () => {
         <NavLinksContainer>
           <NavLinks />
         </NavLinksContainer>
-        <HamburgerContainer>
+        {/* <HamburgerContainer>
           <Dropdown
             {...(!isOpen && { visible: isOpen })}
             onVisibleChange={(visible) => setOpen(visible)}
@@ -76,7 +76,7 @@ const MainNavigation = () => {
               <Hamburger color="white" size={21} toggled={isOpen} toggle={setOpen} />
             </div>
           </Dropdown>
-        </HamburgerContainer>
+        </HamburgerContainer> */}
       </MainHeader>
     </>
   )
