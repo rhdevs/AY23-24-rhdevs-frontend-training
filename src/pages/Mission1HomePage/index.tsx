@@ -30,7 +30,6 @@ const Mission1Page = () => {
     <>
       <MembersSection>
         <MissionsHeader>Mission 1 - TypeScript Exercise</MissionsHeader>
-        <p></p>
         <InformationCardSection>
           <Mission1NameCard
             name="your name here"

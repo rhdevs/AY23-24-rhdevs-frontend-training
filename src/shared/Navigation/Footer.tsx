@@ -64,25 +64,34 @@ const Footer = () => {
   return (
     <MainFooter>
       <LinksContainer>
-        <StyledNavLink to={{ pathname: 'https://www.rhapp.lol' }} target="_blank">
-          RHapp
-        </StyledNavLink>
         <StyledNavLink
           to={{
-            pathname: 'https://github.com/rhdevs/rhdevs-frontend-training-AY2122',
+            pathname: 'https://github.com/rhdevs/AY22-23-rhdevs-frontend-training',
           }}
           target="_blank"
         >
-          Github
+          Github Repo😸
+        </StyledNavLink>
+        <StyledNavLink to={{ pathname: 'https://t.me/marcus_ong_qy' }} target="_blank">
+          Help desk📲
         </StyledNavLink>
         <LogoContainer>
           <FEWebTitle imgSize="1.5rem" fontSize="17px" />
         </LogoContainer>
-        <StyledNavLink to={{ pathname: 'https://t.me/marcus_ong_qy' }} target="_blank">
-          Help desk
+        <StyledNavLink
+          to={{ pathname: 'https://www.notion.so/rhdevs-wiki/RHDevs-Members-Notion-dbbbc919561649629325f7d72d0a5d35' }}
+          target="_blank"
+        >
+          Members&apos; Notion📘
         </StyledNavLink>
-        <StyledNavLink to={{ pathname: 'https://rhdevs.github.io/landing-page/' }} target="_blank">
-          Blog
+        <StyledNavLink
+          to={{
+            pathname:
+              'https://www.notion.so/heads-of-rhdevs/WIP-RHDevs-Frontend-Code-Style-Guide-b5f294c047f14f78b370031afb2c73c5',
+          }}
+          target="_blank"
+        >
+          Code Style Guide💅
         </StyledNavLink>
       </LinksContainer>
       <Styledhr />

@@ -23,11 +23,28 @@ const StyledNavLink = styled(NavLink)`
 const NavLinks = () => {
   return (
     <UnorderedList>
-      <StyledNavLink to={{ pathname: 'https://bit.ly/3kyO87g' }} target="_blank">
-        Schedule
+      <StyledNavLink
+        to={{ pathname: 'https://drive.google.com/file/d/1DUjrO31B2I16dwV8rev-_WQ6HrW9IZpn/view?usp=sharing' }}
+        target="_blank"
+      >
+        Training Schedule📅
       </StyledNavLink>
-      <StyledNavLink to={{ pathname: 'https://tinyurl.com/frontend-training-resources' }} target="_blank">
-        Resources
+      <StyledNavLink
+        to={{
+          pathname: 'https://github.com/rhdevs/AY22-23-rhdevs-frontend-training',
+        }}
+        target="_blank"
+      >
+        Github Repo😸
+      </StyledNavLink>
+      <StyledNavLink
+        to={{
+          pathname:
+            'https://www.notion.so/heads-of-rhdevs/WIP-RHDevs-Frontend-Code-Style-Guide-b5f294c047f14f78b370031afb2c73c5',
+        }}
+        target="_blank"
+      >
+        Code Style Guide💅
       </StyledNavLink>
     </UnorderedList>
   )
