@@ -1,8 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
-
-import NotFound from '../ErrorPage/NotFound'
 import Mission1NameCard from '../../components/Mission1NameCard'
 
 // Do not edit the other parts of the code!
@@ -14,6 +11,12 @@ const MembersSection = styled.div`
 const MissionsHeader = styled.h1`
   text-align: center;
   font-weight: 600;
+`
+
+const StyledDescription = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const InformationCardSection = styled.div`
@@ -30,9 +33,17 @@ const Mission1Page = () => {
     <>
       <MembersSection>
         <MissionsHeader>Mission 1 - TypeScript Exercise</MissionsHeader>
+        <StyledDescription>
+          Translate a JS code to TS according to instructions given. Access and submit the assignment file from
+          the&nbsp;
+          <a href="https://github.com/rhdevs/fe-training-mission-1-submission-AY22-23">submission repo</a>.
+        </StyledDescription>
+        <StyledDescription>
+          After submitting your assignment, create a card here to link to your submission!
+        </StyledDescription>
         <InformationCardSection>
           <Mission1NameCard
-            name="your name here"
+            name="(example) your name here"
             submissionLink="github.com/rhdevs/fe-training-mission-1-submission-AY22-23/blob/main/submission-folder/example.ts"
           />
           {/* Add your Name Card here! */}

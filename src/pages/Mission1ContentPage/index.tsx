@@ -13,15 +13,6 @@ const MissionsHeader = styled.h1`
   font-weight: 600;
 `
 
-const InformationCardSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  grid-auto-rows: 200px;
-  grid-gap: 1rem;
-  justify-content: space-evenly;
-  padding: 10px 0;
-`
-
 const Link = ({ url }: { url: string }) => {
   const processURL = (link: string) => {
     if (link.indexOf('http://') === 0 || link.indexOf('https://') === 0) return link
@@ -43,11 +34,10 @@ const Mission1ContentPage = () => {
       <MembersSection>
         <MissionsHeader>Mission 1 - TypeScript Exercise</MissionsHeader>
         <p>Translate a JS code to TS according to instructions given</p>
-        <h2>Submission By: {params.name}</h2>
+        <h2>Submission by: {params.name}</h2>
         <h3>
           Link: <Link url={decodedLink} />
         </h3>
-        <InformationCardSection></InformationCardSection>
       </MembersSection>
     </>
   )

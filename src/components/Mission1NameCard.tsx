@@ -23,6 +23,7 @@ const StyledCard = styled.div`
 `
 
 const StyledComponentName = styled.div`
+  text-align: center;
   font-size: calc(16px + 1vw);
 `
 
