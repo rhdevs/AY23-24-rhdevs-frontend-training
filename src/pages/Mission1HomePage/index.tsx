@@ -36,7 +36,10 @@ const Mission1Page = () => {
         <StyledDescription>
           Translate a JS code to TS according to instructions given. Access and submit the assignment file from
           the&nbsp;
-          <a href="https://github.com/rhdevs/fe-training-mission-1-submission-AY22-23">submission repo</a>.
+          <a href="https://github.com/rhdevs/fe-training-mission-1-submission-AY22-23" target="_blank" rel="noreferrer">
+            submission repo
+          </a>
+          .
         </StyledDescription>
         <StyledDescription>
           After submitting your assignment, create a card here to link to your submission!
