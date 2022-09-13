@@ -37,6 +37,7 @@ const Link = ({ url }: { url: string }) => {
 
 const Mission1ContentPage = () => {
   const params = useParams<{ name: string; submissionLink: string }>()
+  const decodedLink = decodeURIComponent(params.submissionLink)
   return (
     <>
       <MembersSection>
@@ -44,7 +45,7 @@ const Mission1ContentPage = () => {
         <p>Translate a JS code to TS according to instructions given</p>
         <h2>Submission By: {params.name}</h2>
         <h3>
-          Link: <Link url={params.submissionLink} />
+          Link: <Link url={decodedLink} />
         </h3>
         <InformationCardSection></InformationCardSection>
       </MembersSection>

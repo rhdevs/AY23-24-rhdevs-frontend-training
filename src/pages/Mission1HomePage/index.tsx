@@ -32,7 +32,10 @@ const Mission1Page = () => {
         <MissionsHeader>Mission 1 - TypeScript Exercise</MissionsHeader>
         <p></p>
         <InformationCardSection>
-          <Mission1NameCard name="your name here" submissionLink="google.com" />
+          <Mission1NameCard
+            name="your name here"
+            submissionLink="github.com/rhdevs/fe-training-mission-1-submission-AY22-23/blob/main/submission-folder/example.ts"
+          />
           {/* Add your Name Card here! */}
         </InformationCardSection>
       </MembersSection>

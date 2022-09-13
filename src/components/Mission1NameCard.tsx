@@ -35,7 +35,9 @@ const Mission1NameCard = (props: Props) => {
   const history = useHistory()
 
   return (
-    <StyledCard onClick={() => history.push(`${PATHS.MISSIONS}/1/${props.name}&link=${props.submissionLink}`)}>
+    <StyledCard
+      onClick={() => history.push(`${PATHS.MISSIONS}/1/${props.name}&link=${encodeURIComponent(props.submissionLink)}`)}
+    >
       <StyledComponentName>{props.name}</StyledComponentName>
     </StyledCard>
   )
