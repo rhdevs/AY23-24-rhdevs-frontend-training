@@ -37,7 +37,7 @@ const LandingPage = () => {
       <MembersSection>
         <MissionsHeader>Missions</MissionsHeader>
         <InformationCardSection>
-          <MissionCard groupNumber={1} componentName="TypeScript Exercise" />
+          <MissionCard groupNumber={1} componentName="Shopping Lists" />
         </InformationCardSection>
       </MembersSection>
     </>

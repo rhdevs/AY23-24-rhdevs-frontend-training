@@ -15,6 +15,7 @@ const MissionsHeader = styled.h1`
 
 const StyledDescription = styled.p`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `
@@ -32,23 +33,24 @@ const Mission1Page = () => {
   return (
     <>
       <MembersSection>
-        <MissionsHeader>Mission 1 - TypeScript Exercise</MissionsHeader>
+        <MissionsHeader>Mission 1 - Shopping Lists</MissionsHeader>
         <StyledDescription>
-          Translate a JS code to TS according to instructions given. Access and submit the assignment file from
-          the&nbsp;
-          <a href="https://github.com/rhdevs/fe-training-mission-1-submission-AY22-23" target="_blank" rel="noreferrer">
-            submission repo
-          </a>
-          .
+          <h3>Create a shopping list that have the following functions:</h3>
+          <ol>
+            <li>Add item to list</li>
+            <li>Remove item from list</li>
+            <li>(Bonus) Add a &apos;quantity&apos; field for each item that you can increment/decrement</li>
+          </ol>
+          <span>
+            Figma link:&nbsp;
+            <a href="https://www.figma.com/file/arMvxn1zopKqB1m8bTh71Q/Shopping-Lists" target="_blank" rel="noreferrer">
+              https://www.figma.com/file/arMvxn1zopKqB1m8bTh71Q/Shopping-Lists
+            </a>
+          </span>
         </StyledDescription>
-        <StyledDescription>
-          After submitting your assignment, create a card here to link to your submission!
-        </StyledDescription>
+        <StyledDescription>Create a card here with your name to link to your submission!</StyledDescription>
         <InformationCardSection>
-          <Mission1NameCard
-            name="(example) your name here"
-            submissionLink="github.com/rhdevs/fe-training-mission-1-submission-AY22-23/blob/main/submission-folder/example.ts"
-          />
+          <Mission1NameCard name="Example" />
           {/* Add your Name Card here! */}
         </InformationCardSection>
       </MembersSection>

@@ -27,19 +27,12 @@ const StyledComponentName = styled.div`
   font-size: calc(16px + 1vw);
 `
 
-type Props = {
-  name: string
-  submissionLink: string
-}
-
-const Mission1NameCard = (props: Props) => {
+const Mission1NameCard = ({ name }: { name: string }) => {
   const history = useHistory()
 
   return (
-    <StyledCard
-      onClick={() => history.push(`${PATHS.MISSIONS}/1/${props.name}&link=${encodeURIComponent(props.submissionLink)}`)}
-    >
-      <StyledComponentName>{props.name}</StyledComponentName>
+    <StyledCard onClick={() => history.push(`${PATHS.MISSIONS}/1/${name}`)}>
+      <StyledComponentName>{name}</StyledComponentName>
     </StyledCard>
   )
 }
