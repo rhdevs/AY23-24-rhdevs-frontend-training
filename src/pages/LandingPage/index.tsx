@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import MissionCard from '../../components/MissionCard'
+import MissionCard from '../../components/Cards/MissionCard'
 
 import frontendBannerGif from '../../assets/Frontend-Banner.gif'
-import GeneralCard from '../../components/GeneralCard'
+import GeneralCard from '../../components/Cards/GeneralCard'
 import { PATHS } from '../../App'
 
 // Do not edit the other parts of the code!
