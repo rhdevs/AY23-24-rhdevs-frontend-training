@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import MissionCard from '../../components/MissionCard'
 
 import frontendBannerGif from '../../assets/Frontend-Banner.gif'
+import GeneralCard from '../../components/GeneralCard'
+import { PATHS } from '../../App'
 
 // Do not edit the other parts of the code!
 const FrontendBanner = styled.img`
@@ -38,6 +40,10 @@ const LandingPage = () => {
         <MissionsHeader>Missions</MissionsHeader>
         <InformationCardSection>
           <MissionCard groupNumber={1} componentName="Shopping Lists" />
+        </InformationCardSection>
+        <MissionsHeader>Playground</MissionsHeader>
+        <InformationCardSection>
+          <GeneralCard componentName="Redux Playground" path={`${PATHS.PLAYGROUND}/redux_playground`} />
         </InformationCardSection>
       </MembersSection>
     </>
