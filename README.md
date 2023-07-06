@@ -1,1 +1,1 @@
-# AY22-23-rhdevs-frontend-training
+# AY23-24-rhdevs-frontend-training
