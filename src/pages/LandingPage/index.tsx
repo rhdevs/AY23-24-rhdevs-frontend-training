@@ -3,17 +3,10 @@ import styled from 'styled-components'
 
 import MissionCard from '../../components/Cards/MissionCard'
 
-import frontendBannerGif from '../../assets/Frontend-Banner.gif'
 import GeneralCard from '../../components/Cards/GeneralCard'
 import { PATHS } from '../../App'
 
 // Do not edit the other parts of the code!
-const FrontendBanner = styled.img`
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-`
-
 const MembersSection = styled.div`
   margin: 1.5rem 1rem;
 `
@@ -35,7 +28,6 @@ const InformationCardSection = styled.div`
 const LandingPage = () => {
   return (
     <>
-      <FrontendBanner src={frontendBannerGif} alt="frontend web development" />
       <MembersSection>
         <MissionsHeader>Missions</MissionsHeader>
         <InformationCardSection>

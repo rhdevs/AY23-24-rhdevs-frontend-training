@@ -66,13 +66,13 @@ const Footer = () => {
       <LinksContainer>
         <StyledNavLink
           to={{
-            pathname: 'https://github.com/rhdevs/AY22-23-rhdevs-frontend-training',
+            pathname: 'https://github.com/rhdevs/AY23-24-rhdevs-frontend-training',
           }}
           target="_blank"
         >
           Github Repo😸
         </StyledNavLink>
-        <StyledNavLink to={{ pathname: 'https://t.me/marcus_ong_qy' }} target="_blank">
+        <StyledNavLink to={{ pathname: 'https://t.me/lws49' }} target="_blank">
           Help desk📲
         </StyledNavLink>
         <LogoContainer>

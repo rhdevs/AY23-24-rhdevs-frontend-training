@@ -34,7 +34,7 @@ const FEWebTitle = (props: Props) => {
   return (
     <FEContainer onClick={() => history.push('/')}>
       <StyledIcon imgSize={props.imgSize} src={frontendIcon} alt="Frontend Icon" />
-      <TitleText fontSize={props.fontSize}>RHDevs AY22/23 Frontend Bootcamp 🚀</TitleText>
+      <TitleText fontSize={props.fontSize}>RHDevs AY23/24 Frontend Bootcamp 🚀</TitleText>
     </FEContainer>
   )
 }

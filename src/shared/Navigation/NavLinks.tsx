@@ -31,7 +31,7 @@ const NavLinks = () => {
       </StyledNavLink>
       <StyledNavLink
         to={{
-          pathname: 'https://github.com/rhdevs/AY22-23-rhdevs-frontend-training',
+          pathname: 'https://github.com/rhdevs/AY23-24-rhdevs-frontend-training',
         }}
         target="_blank"
       >
