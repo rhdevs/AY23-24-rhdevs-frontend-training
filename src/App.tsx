@@ -1,88 +1,53 @@
-import React, { Suspense, useEffect } from "react";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
-import { Provider } from "react-redux";
+import React, { Suspense, useEffect } from 'react'
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
-import LoadingSpinner from "./components/LoadingSpinner";
-import MainNavigation from "./shared/Navigation/MainNavigation";
-import Footer from "./shared/Navigation/Footer";
+import LoadingSpinner from './components/LoadingSpinner'
+import MainNavigation from './shared/Navigation/MainNavigation'
+import Footer from './shared/Navigation/Footer'
 
-import "./App.css";
-import "antd/dist/antd.css";
-import store from "./store/store";
+import './App.css'
+import 'antd/dist/antd.css'
+import store from './store/store'
 
 export enum PATHS {
-  MISSIONS = "/missions",
-  PLAYGROUND = "/playground",
+  MISSIONS = '/missions',
+  PLAYGROUND = '/playground',
 }
 
-const LandingPage = React.lazy(
-  () => import(/* webpackChunckName: "LandingPage" */ "./pages/LandingPage")
-);
-const NotFound = React.lazy(
-  () => import(/* webpackChunckName: "NotFound" */ "./pages/ErrorPage/NotFound")
-);
+const LandingPage = React.lazy(() => import(/* webpackChunckName: "LandingPage" */ './pages/LandingPage'))
+const NotFound = React.lazy(() => import(/* webpackChunckName: "NotFound" */ './pages/ErrorPage/NotFound'))
 const Mission1HomePage = React.lazy(
-  () =>
-    import(
-      /* webpackChunckName: "Mission1HomePage" */ "./pages/Mission1HomePage"
-    )
-);
-const ReduxPlayground = React.lazy(
-  () =>
-    import(/* webpackChunckName: "ReduxPlayground" */ "./pages/ReduxPlayground")
-);
-const SL_Example = React.lazy(
-  () =>
-    import(
-      /* webpackChunckName: "Example" */ "./pages/YourShoppingListsHere/Example"
-    )
-);
-const SL_Ziyang = React.lazy(
-  () =>
-    import(
-      /* webpackChunckName: "Example" */ "./pages/YourShoppingListsHere/Ziyang"
-    )
-);
+  () => import(/* webpackChunckName: "Mission1HomePage" */ './pages/Mission1HomePage'),
+)
+const ReduxPlayground = React.lazy(() => import(/* webpackChunckName: "ReduxPlayground" */ './pages/ReduxPlayground'))
+const SL_Example = React.lazy(() => import(/* webpackChunckName: "Example" */ './pages/YourShoppingListsHere/Example'))
+const SL_Ziyang = React.lazy(() => import(/* webpackChunckName: "Example" */ './pages/YourShoppingListsHere/Ziyang'))
 const SL_Example_redux = React.lazy(
-  () =>
-    import(
-      /* webpackChunckName: "Example_redux" */ "./pages/YourShoppingListsHere/Example_redux"
-    )
-);
+  () => import(/* webpackChunckName: "Example_redux" */ './pages/YourShoppingListsHere/Example_redux'),
+)
 // Add your Page here!
 
 function App() {
   useEffect(() => {
     // To bring user to the op of the page on first render
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
   const routes = (
     <Switch>
       <Route path="/" exact component={LandingPage} />
       <Route path={`${PATHS.MISSIONS}/1`} exact component={Mission1HomePage} />
-      <Route
-        path={`${PATHS.PLAYGROUND}/redux_playground`}
-        exact
-        component={ReduxPlayground}
-      />
+      <Route path={`${PATHS.PLAYGROUND}/redux_playground`} exact component={ReduxPlayground} />
       <Route path={`${PATHS.MISSIONS}/1/Ziyang`} exact component={SL_Ziyang} />
-      <Route
-        path={`${PATHS.MISSIONS}/1/Example`}
-        exact
-        component={SL_Example}
-      />
-      <Route
-        path={`${PATHS.MISSIONS}/1/Example_redux`}
-        exact
-        component={SL_Example_redux}
-      />
+      <Route path={`${PATHS.MISSIONS}/1/Example`} exact component={SL_Example} />
+      <Route path={`${PATHS.MISSIONS}/1/Example_redux`} exact component={SL_Example_redux} />
 
       {/* Add your Route here! */}
 
       <Route component={NotFound} />
       <Redirect to="/" />
     </Switch>
-  );
+  )
 
   return (
     <Provider store={store}>
@@ -96,7 +61,7 @@ function App() {
         </Suspense>
       </BrowserRouter>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App
