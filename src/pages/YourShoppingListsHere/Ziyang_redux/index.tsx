@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { incrementValue } from '../../../store/example/actions'
+import { incrementValue } from '../../../store/ziyang/actions'
 import { RootState } from '../../../store/types'
 
 // Do not edit the other parts of the code!
@@ -12,7 +12,7 @@ const ShoppingListDiv = styled.div`
 
 const SL_Ziyang_Redux = () => {
   const dispatch: Dispatch<any> = useDispatch()
-  const { val } = useSelector((state: RootState) => state.exampleStore)
+  const { val } = useSelector((state: RootState) => state.ziyangStore)
   return (
     <ShoppingListDiv>
       <h1>Copy Your Shopping List Here, and implement with Redux!</h1>
