@@ -52,6 +52,7 @@ const Mission1Page = () => {
         <InformationCardSection>
           <Mission1NameCard name="Example" />
           <Mission1NameCard name="Example_redux" />
+          <Mission1NameCard name="Ziyang_redux" />
           {/* Add your Name Card here! */}
         </InformationCardSection>
       </MembersSection>
