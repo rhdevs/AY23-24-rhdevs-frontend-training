@@ -13,6 +13,7 @@ const ShoppingListDiv = styled.div`
 const Redux_Playground = () => {
   const dispatch: Dispatch<any> = useDispatch()
   const { val } = useSelector((state: RootState) => state.playground)
+
   return (
     <ShoppingListDiv>
       <h1>Redux Playground</h1>
