@@ -8,10 +8,3 @@ export const incrementVal = () => (dispatch: Dispatch<ActionTypes>, getState: Ge
     val: val + 1,
   })
 }
-
-export const SET_STRING_VAL = (s: string) => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
-  dispatch({
-    type: PLAYGROUND.SET_STRING_VAL,
-    stringVal: s,
-  })
-}
