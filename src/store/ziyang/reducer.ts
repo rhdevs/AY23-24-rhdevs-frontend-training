@@ -34,18 +34,34 @@ type State = {
 
 export const ziyangStore: Reducer<State, ActionTypes> = (state = initialState, action) => {
   switch (action.type) {
-    case ZIYANG_SHOPPING_LIST_ACTIONS.ADD: {
+    case ZIYANG_SHOPPING_LIST_ACTIONS.ADD:
+      const datas = [...state.data]
+      datas.push({
+        key: action.key,
+        name: action.name,
+        quantity: 1,
+      })
       return {
         ...state,
-        data: [
-          {
-            key: 123,
-            name: 'ASDASD',
-            quantity: 102,
-          },
-        ],
+        data: datas,
       }
-    }
+    case ZIYANG_SHOPPING_LIST_ACTIONS.INCREMENT:
+      return {
+        ...state,
+        data: [...state.data].map((x) => (x.key === action.key ? { ...x, quantity: x.quantity + 1 } : x)),
+      }
+    case ZIYANG_SHOPPING_LIST_ACTIONS.DECREMENT:
+      return {
+        ...state,
+        data: [...state.data]
+          .map((x) => (x.key === action.key ? { ...x, quantity: x.quantity - 1 } : x))
+          .filter((x) => x.quantity !== 0),
+      }
+    case ZIYANG_SHOPPING_LIST_ACTIONS.DELETE:
+      return {
+        ...state,
+        data: [...state.data].filter((x) => x.key !== action.key),
+      }
     default:
       return state
   }

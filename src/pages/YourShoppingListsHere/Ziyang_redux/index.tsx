@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { Add } from '../../../store/ziyang/actions'
+import { Add, INCREMENT, DECREMENT, DELETE } from '../../../store/ziyang/actions'
 import { RootState } from '../../../store/types'
 import { useState, useEffect } from 'react'
 import { Form, Space, Table, Tag } from 'antd'
@@ -39,14 +39,18 @@ const SL_Ziyang_Redux = () => {
       key: 'action',
       render: (_, record) => (
         <Space size="middle">
-          {/* <button onClick={() => increment(record.key)}>+</button> */}
-          {/* <button onClick={() => console.log("asdasd")}>+</button> */}
-          {/* <button onClick={() => decrement(record.key)}>-</button> */}
+          <button onClick={() => dispatch(INCREMENT(record.key))}>+</button>
+          <button onClick={() => dispatch(DECREMENT(record.key))}>-</button>
+          <button onClick={() => dispatch(DELETE(record.key))}>delete</button>
+          {/* <button onClick={() => decrement(record.key)}>-</button>
           {/* <button onClick={() => del(record.key)}>delete</button> */}
         </Space>
       ),
     },
   ]
+
+  const submit = (values: any) => dispatch(Add(values.name))
+
   return (
     <ShoppingListDiv>
       {/* <h1>Copy Your Shopping List Here, and implement with Redux!</h1>
@@ -54,8 +58,7 @@ const SL_Ziyang_Redux = () => {
       <button onClick={() => dispatch(incrementValue())}>Increment</button> */}
       <>
         <Table columns={columns} dataSource={data} pagination={false} />
-        {/* <Form onFinish={submit}> */}
-        <Form>
+        <Form onFinish={submit}>
           <Space.Compact style={{ width: '90%' }}>
             <Form.Item<'text'> name="name">
               <Input />
@@ -65,15 +68,6 @@ const SL_Ziyang_Redux = () => {
             </Button>
           </Space.Compact>
         </Form>
-        <button
-          onClick={() => {
-            dispatch(Add())
-            console.log(data)
-          }}
-        >
-          {' '}
-          ASDASDASDASDASD
-        </button>
       </>
     </ShoppingListDiv>
   )
