@@ -25,6 +25,9 @@ const SL_Example = React.lazy(() => import(/* webpackChunckName: "Example" */ '.
 const SL_Example_redux = React.lazy(
   () => import(/* webpackChunckName: "Example_redux" */ './pages/YourShoppingListsHere/Example_redux'),
 )
+const SL_Ziyang_redux = React.lazy(
+  () => import(/* webpackChunckName: "Example_redux" */ './pages/YourShoppingListsHere/Ziyang_redux'),
+)
 // Add your Page here!
 
 function App() {
@@ -39,6 +42,7 @@ function App() {
       <Route path={`${PATHS.PLAYGROUND}/redux_playground`} exact component={ReduxPlayground} />
       <Route path={`${PATHS.MISSIONS}/1/Example`} exact component={SL_Example} />
       <Route path={`${PATHS.MISSIONS}/1/Example_redux`} exact component={SL_Example_redux} />
+      <Route path={`${PATHS.MISSIONS}/1/Ziyang_redux`} exact component={SL_Ziyang_redux} />
       {/* Add your Route here! */}
 
       <Route component={NotFound} />
