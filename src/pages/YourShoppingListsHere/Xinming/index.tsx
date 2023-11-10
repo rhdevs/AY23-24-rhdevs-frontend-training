@@ -37,7 +37,7 @@ const buttonStyle: React.CSSProperties = {
 }
 
 interface Item {
-  key: string
+  key: number
   quantity: number
   name: string
 }
@@ -89,7 +89,7 @@ const IncrementIcon = () => (
 
 const SL_Xinming = () => {
   const defaultItem: Item = {
-    key: '0',
+    key: 0,
     quantity: 3,
     name: 'Eggs',
   }
@@ -112,31 +112,31 @@ const SL_Xinming = () => {
       title: 'Action',
       dataIndex: 'action',
       key: 'action',
-      render: (_, item: Item, index: number) => {
+      render: (_, item: Item) => {
         const handleIncrement = () => {
           setShoppingList((prevValue: Item[]) => {
-            const newList = [...prevValue]
-            newList[index].quantity = prevValue[index].quantity + 1
-            console.log(newList[index].quantity)
-            return newList
+            return prevValue.map((prevItem: Item) => {
+              if (prevItem.key === item.key) {
+                return { ...prevItem, quantity: prevItem.quantity + 1 }
+              }
+              return prevItem
+            })
           })
         }
         const handleDecrement = () => {
           setShoppingList((prevValue: Item[]) => {
-            const newList = [...prevValue]
-            newList[index].quantity = prevValue[index].quantity - 1
-            console.log(newList[index].quantity)
-            if (newList[index].quantity <= 0) {
-              newList.splice(index, 1)
-            }
-            return newList
+            const newList = prevValue.map((prevItem: Item) => {
+              if (prevItem.key === item.key) {
+                return { ...prevItem, quantity: prevItem.quantity - 1 }
+              }
+              return prevItem
+            })
+            return newList.filter((newItem: Item) => newItem.quantity > 0)
           })
         }
         const handleDelete = () => {
           setShoppingList((prevValue: Item[]) => {
-            const newList = [...prevValue]
-            newList.splice(index, 1)
-            return newList
+            return prevValue.filter((prevItem: Item) => prevItem.key !== item.key)
           })
         }
         return (
@@ -153,15 +153,13 @@ const SL_Xinming = () => {
   ]
 
   const handleAddItem = () => {
-    console.log('clicked')
     const quantity = (document.getElementById('add-quantity') as HTMLInputElement)?.value
     const name = (document.getElementById('add-name') as HTMLInputElement)?.value
-    console.log(quantity, name)
     if (quantity && name) {
       setShoppingList((prevValue: Item[]) => {
         const newList = [...prevValue]
         newList.push({
-          key: `${newList.length}`,
+          key: newList.length,
           quantity: parseInt(quantity),
           name,
         })
@@ -173,7 +171,7 @@ const SL_Xinming = () => {
   return (
     <ShoppingListDiv>
       <h1>Shopping List</h1>
-      <Table style={{ width: '100%' }} columns={columns} dataSource={[...shoppingList]} />
+      <Table style={{ width: '100%' }} columns={columns} dataSource={[...shoppingList]} pagination={false} />
       <AddItemDiv style={{ marginTop: '20px' }}>
         <InputNumber style={{ ...inputStyle, width: 'calc(10% - 7px)' }} min={1} defaultValue={1} id="add-quantity" />
         <Input style={{ ...inputStyle, width: 'calc(60% - 14px)' }} placeholder="Item Name" id="add-name" />
