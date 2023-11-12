@@ -11,7 +11,7 @@ const ShoppingListDiv = styled.div`
   margin: 1.5rem 1rem;
 `
 
-interface DataType {
+interface SingleRow {
   key: number
   name: string
   quantity: number
@@ -20,7 +20,7 @@ interface DataType {
 const SL_VikramGoyal: React.FC = () => {
   const increment = (id: number) => {
     //@ts-expect-error idk tbh
-    setData((x: DataType[] | void) => {
+    setData((x: SingleRow[] | void) => {
       if (x !== undefined) {
         return x.map((y) => (y.key !== id ? y : { ...y, quantity: y.quantity + 1 }))
       }
@@ -28,7 +28,7 @@ const SL_VikramGoyal: React.FC = () => {
   }
   const del = (id: number) => {
     //@ts-expect-error idk tbh
-    setData((x: DataType[] | void) => {
+    setData((x: SingleRow[] | void) => {
       if (x !== undefined) {
         return x.filter((y) => y.key != id)
       }
@@ -36,13 +36,13 @@ const SL_VikramGoyal: React.FC = () => {
   }
   const decrement = (id: number) => {
     //@ts-expect-error idk tbh
-    setData((x: DataType[] | void) => {
+    setData((x: SingleRow[] | void) => {
       if (x !== undefined) {
         return x.map((y) => (y.key !== id ? y : { ...y, quantity: y.quantity - 1 })).filter((x) => x.quantity !== 0)
       }
     })
   }
-  const columns: ColumnsType<DataType> = [
+  const columns: ColumnsType<SingleRow> = [
     {
       title: 'Name',
       dataIndex: 'name',
@@ -67,7 +67,7 @@ const SL_VikramGoyal: React.FC = () => {
     },
   ]
 
-  const [data, setData] = useState<DataType[]>([])
+  const [data, setData] = useState<SingleRow[]>([])
 
   //@ts-expect-error idk tbh
   const submit = ({ name }) => {
