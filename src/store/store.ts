@@ -4,9 +4,11 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 import { exampleStore } from './example/reducer'
 import { playground } from './playground/reducer'
+import { vedStore } from './Ved/reducer'
 
 export const rootReducer = combineReducers({
   exampleStore,
+  vedStore,
   playground,
 })
 const middlewares = [thunk]
