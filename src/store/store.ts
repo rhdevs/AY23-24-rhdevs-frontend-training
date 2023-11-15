@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 import { exampleStore } from './example/reducer'
 import { playground } from './playground/reducer'
-import { vikramgoyalStore } from './VikramGoyalRedux/reducer'
+import { vikramgoyalStore } from './VikramGoyal/reducer'
 
 export const rootReducer = combineReducers({
   exampleStore,
