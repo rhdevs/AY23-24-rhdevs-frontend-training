@@ -3,23 +3,7 @@ import { ActionTypes, VIKRAMGOYAL_SHOPPING_LIST_ACTIONS } from './types'
 
 //set an initial state for your variable
 const initialState = {
-  data: [
-    {
-      key: 1,
-      name: 'Eggs',
-      quantity: 1,
-    },
-    {
-      key: 2,
-      name: 'Milk',
-      quantity: 1,
-    },
-    {
-      key: 3,
-      name: 'Meat',
-      quantity: 1,
-    },
-  ],
+  data: [],
 }
 
 interface SingleRow {
