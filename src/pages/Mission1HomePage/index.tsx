@@ -51,7 +51,9 @@ const Mission1Page = () => {
         <StyledDescription>Create a card here with your name to link to your submission!</StyledDescription>
         <InformationCardSection>
           <Mission1NameCard name="Example" />
+          <Mission1NameCard name="VikramGoyal" />
           <Mission1NameCard name="Example_redux" />
+          <Mission1NameCard name="VikramGoyal_redux" />
           {/* Add your Name Card here! */}
         </InformationCardSection>
       </MembersSection>

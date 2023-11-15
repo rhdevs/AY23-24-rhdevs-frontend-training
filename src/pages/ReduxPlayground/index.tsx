@@ -1,7 +1,7 @@
-import React, { Dispatch } from 'react'
+import React, { useState, Dispatch } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { incrementVal } from '../../store/playground/actions'
+import { incrementVal, setStringVal } from '../../store/playground/actions'
 import { RootState } from '../../store/types'
 
 // Do not edit the other parts of the code!
@@ -11,13 +11,18 @@ const ShoppingListDiv = styled.div`
 `
 
 const Redux_Playground = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const dispatch: Dispatch<any> = useDispatch()
-  const { val } = useSelector((state: RootState) => state.playground)
+  const { val, stringVal } = useSelector((state: RootState) => state.playground)
+  const [inputVal, setInputVal] = useState('')
 
   return (
     <ShoppingListDiv>
       <h1>Redux Playground</h1>
       <h2>val: {val}</h2>
+      <h2>stringVal: {stringVal}</h2>
+      <input value={inputVal} onChange={(e) => setInputVal(e.target.value)} />
+      <button onClick={() => dispatch(setStringVal(inputVal))}>Set stringVal</button>
       <button onClick={() => dispatch(incrementVal())}>Increment val</button>
     </ShoppingListDiv>
   )

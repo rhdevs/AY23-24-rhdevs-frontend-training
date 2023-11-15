@@ -22,8 +22,14 @@ const Mission1HomePage = React.lazy(
 )
 const ReduxPlayground = React.lazy(() => import(/* webpackChunckName: "ReduxPlayground" */ './pages/ReduxPlayground'))
 const SL_Example = React.lazy(() => import(/* webpackChunckName: "Example" */ './pages/YourShoppingListsHere/Example'))
+const SL_VikramGoyal = React.lazy(
+  () => import(/* webpackChunckName: "VikramGoyal" */ './pages/YourShoppingListsHere/VikramGoyal'),
+)
 const SL_Example_redux = React.lazy(
   () => import(/* webpackChunckName: "Example_redux" */ './pages/YourShoppingListsHere/Example_redux'),
+)
+const SL_VikramGoyal_redux = React.lazy(
+  () => import(/* webpackChunckName: "VikramGoyal_redux" */ './pages/YourShoppingListsHere/VikramGoyal_redux'),
 )
 // Add your Page here!
 
@@ -38,7 +44,9 @@ function App() {
       <Route path={`${PATHS.MISSIONS}/1`} exact component={Mission1HomePage} />
       <Route path={`${PATHS.PLAYGROUND}/redux_playground`} exact component={ReduxPlayground} />
       <Route path={`${PATHS.MISSIONS}/1/Example`} exact component={SL_Example} />
+      <Route path={`${PATHS.MISSIONS}/1/VikramGoyal`} exact component={SL_VikramGoyal} />
       <Route path={`${PATHS.MISSIONS}/1/Example_redux`} exact component={SL_Example_redux} />
+      <Route path={`${PATHS.MISSIONS}/1/VikramGoyal_redux`} exact component={SL_VikramGoyal_redux} />
       {/* Add your Route here! */}
 
       <Route component={NotFound} />
