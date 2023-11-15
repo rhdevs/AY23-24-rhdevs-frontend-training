@@ -13,7 +13,7 @@ const ShoppingListDiv = styled.div`
   margin: 1.5rem 1rem;
 `
 
-interface DataType {
+interface SingleRow {
   key: number
   name: string
   quantity: number
@@ -23,7 +23,7 @@ const SL_VikramGoyal_Redux = () => {
   const dispatch: Dispatch<any> = useDispatch()
   const { data } = useSelector((state: RootState) => state.vikramgoyalStore)
 
-  const columns: ColumnsType<DataType> = [
+  const columns: ColumnsType<SingleRow> = [
     {
       title: 'Name',
       dataIndex: 'name',
